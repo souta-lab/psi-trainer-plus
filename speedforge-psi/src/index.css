@@ -1,0 +1,53 @@
+/* Global black-based theme override */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Noto Serif JP", system-ui, serif;
+  --color-bg-base: #000000;
+  --color-surface: #0a0a0a;
+  --color-surface-2: #141414;
+  --color-surface-3: #1f1f1f;
+  --color-border: #ff660040;
+  --color-text: #eaeaea;
+  --color-text-muted: #ff660090;
+  --color-accent: #ff6600;
+  --color-accent-blue: #00ffcc;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  background-color: #000;
+}
+
+body {
+  @apply text-neutral-50 font-sans antialiased;
+  background-color: #000;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+#root {
+  @apply min-h-screen flex flex-col;
+  background-color: #000;
+}
+
+button {
+  @apply focus:outline-none transition-all;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* No-scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
